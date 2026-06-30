@@ -1,0 +1,63 @@
+.tick-tape {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1rem 1.6rem;
+    background: var(--general-section-1);
+    border-radius: 0.8rem;
+    border: 1px solid var(--general-section-2);
+
+    &__label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-less-prominent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        white-space: nowrap;
+    }
+    &__scroll {
+        flex: 1;
+        overflow-x: auto;
+        scrollbar-width: none;
+        &::-webkit-scrollbar { display: none; }
+    }
+    &__inner {
+        display: flex;
+        gap: 0.4rem;
+        min-width: max-content;
+    }
+    &__current {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.2rem;
+        min-width: 3.6rem;
+    }
+    &__current-label { font-size: 1rem; color: var(--text-less-prominent); }
+    &__current-digit { font-size: 2rem; font-weight: 700; color: var(--button-primary-default); line-height: 1; }
+}
+
+.tick-cell {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.4rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    background: var(--general-section-2);
+    color: var(--text-general);
+    flex-shrink: 0;
+    transition: background 0.15s ease, transform 0.15s ease;
+
+    &--last    { background: var(--button-primary-default); color: var(--text-colored-background); transform: scale(1.1); }
+    &--match   { background: var(--status-warning); color: #fff; }
+    &--win     { background: var(--status-success); color: #fff; }
+    &--animate { animation: tick-pop 0.25s ease; }
+}
+
+@keyframes tick-pop {
+    0%   { transform: scale(1.3); }
+    100% { transform: scale(1.1); }
+}
