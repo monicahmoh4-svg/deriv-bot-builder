@@ -1,0 +1,47 @@
+.contract-type-selector {
+    &__label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-less-prominent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.8rem;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+    }
+    &__description {
+        margin-top: 0.8rem;
+        font-size: 1.1rem;
+        color: var(--text-less-prominent);
+        min-height: 1.6rem;
+    }
+}
+
+.contract-type-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    padding: 0.8rem 0.4rem;
+    border: 1.5px solid var(--general-section-2);
+    border-radius: 0.6rem;
+    background: var(--general-main-1);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+
+    &:hover { border-color: var(--button-primary-default); background: var(--general-section-1); }
+
+    &--active {
+        border-color: var(--button-primary-default);
+        background: var(--button-primary-default);
+        .contract-type-btn__icon,
+        .contract-type-btn__label { color: var(--text-colored-background); }
+    }
+
+    &__icon  { font-size: 1.6rem; font-weight: 700; color: var(--text-general); line-height: 1; }
+    &__label { font-size: 1.1rem; font-weight: 600; color: var(--text-general); white-space: nowrap; }
+}
