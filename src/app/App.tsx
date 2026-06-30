@@ -117,14 +117,3 @@ function App() {
 }
 
 export default App;
-// At the top, add:
-const DigitsTradingPage = lazy(() =>
-    import('./pages/DigitsTradingPage').then(m => ({ default: m.DigitsTradingPage }))
-);
-
-// Inside <Routes>, add:
-<Route path="/digits" element={
-    <Suspense fallback={<div className="loading-screen" />}>
-        <DigitsTradingPage />
-    </Suspense>
-} />
