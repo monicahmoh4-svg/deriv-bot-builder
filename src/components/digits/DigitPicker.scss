@@ -1,0 +1,34 @@
+.digit-picker {
+    &__label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-less-prominent);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.8rem;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.6rem;
+    }
+}
+
+.digit-btn {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border: 1.5px solid var(--general-section-2);
+    border-radius: 0.6rem;
+    background: var(--general-main-1);
+    color: var(--text-general);
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover:not(&--selected) { border-color: var(--button-primary-default); color: var(--button-primary-default); }
+    &--selected { border-color: var(--button-primary-default); background: var(--button-primary-default); color: var(--text-colored-background); }
+    &--win:not(&--selected)  { border-color: var(--status-success); color: var(--status-success); }
+}
